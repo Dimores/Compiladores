@@ -13,7 +13,6 @@ public class IntegerNumber
         this.value = (int) value;
     }
 
-
     @Override
     public Object getValue() {
         return value;
