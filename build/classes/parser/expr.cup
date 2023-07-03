@@ -1,0 +1,84 @@
+import java_cup.runtime.*;
+import ast.interfaces.*; 
+import designPatterns.*;
+import ast.impl.*; 
+import java.util.Stack;
+
+parser code{:
+    IFactory fabrica;
+    Stack<IExpression> pilha = new Stack<IExpression>();
+
+    public Parser(Scanner scanner, IFactory fac){
+        this(scanner);
+        this.fabrica = fac;
+    }    
+
+    public void efetuaOperacaoBinaria(int code){
+        IExpression e2 = this.pilha.pop();
+        IExpression e1 = this.pilha.pop();
+        IOperation op = this.fabrica.createBinaryOperation(code,e1,e2);
+        this.pilha.push(op);
+    }
+
+:}
+
+/*TERMINAIS */
+terminal MAIS, MENOS, MULT, DIV, MOD;
+terminal PTVIRG, ABREPAR, FECHAPAR, ABRECHAVE, FECHACHAVE;
+terminal Integer NUMBER, IDENT;
+
+/*NÃO TERMINAIS */
+non terminal IExpression expr_ptv, expr, factor, term;
+
+
+expr_ptv ::=
+            	expr PTVIRG
+                {:                    
+                    IExpression resultado = parser.pilha.pop();                   
+                    RESULT = resultado;
+                :} 
+            ;
+
+expr  	 ::=  
+                expr MAIS term	  
+                {:
+                    parser.efetuaOperacaoBinaria(sym.MAIS);                   
+                :}
+            | 
+                expr MENOS term	                
+                {:
+                    parser.efetuaOperacaoBinaria(sym.MENOS);                   
+                :}
+            | 
+                MENOS term
+                {:
+                    IExpression e = parser.pilha.pop();
+                    IOperation op = parser.fabrica.createUnaryOperation(sym.MENOS, e);
+                    parser.pilha.push(op);
+                :}
+            | 
+                term 			
+			;
+		          
+term     ::=    
+                factor MULT term
+                {:
+                    parser.efetuaOperacaoBinaria(sym.MULT);
+                :} 
+	   | 
+                factor DIV term
+                {:
+                    parser.efetuaOperacaoBinaria(sym.DIV);
+                :}     
+           | 
+                factor                			
+		;
+
+factor    ::=  
+                NUMBER:n
+                {:
+                    parser.pilha.push(parser.fabrica.createNumber(n));
+                :}
+ 	    | 
+                ABREPAR expr FECHAPAR	                			
+            ;

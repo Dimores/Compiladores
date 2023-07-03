@@ -1,0 +1,88 @@
+<class-diagram version="0.9.86" automaticImage="JPEG" icons="true" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <interface corner="BOTTOM_RIGHT" language="java" name="ast.interfaces.BinaryOperation" project="ast2009-roteiro1" 
+    file="/ast2009-roteiro1/src/ast/interfaces/BinaryOperation.java" binary="false">    
+    <position x="217" y="379" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="ast.interfaces.Operation" project="ast2009-roteiro1" 
+    file="/ast2009-roteiro1/src/ast/interfaces/Operation.java" binary="false">    
+    <position x="358" y="253" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="ast.interfaces.IntegerNumber" project="ast2009-roteiro1" 
+    file="/ast2009-roteiro1/src/ast/interfaces/IntegerNumber.java" binary="false">    
+    <position x="171" y="246" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="ast.interfaces.Expression" project="ast2009-roteiro1" 
+    file="/ast2009-roteiro1/src/ast/interfaces/Expression.java" binary="false">    
+    <position x="299" y="82" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="ast.interfaces.Visitor" project="ast2009-roteiro1" 
+    file="/ast2009-roteiro1/src/ast/interfaces/Visitor.java" binary="false">    
+    <position x="638" y="303" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="ast.interfaces.UnaryOperation" project="ast2009-roteiro1" 
+    file="/ast2009-roteiro1/src/ast/interfaces/UnaryOperation.java" binary="false">    
+    <position x="407" y="380" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="ast.interfaces.Factory" project="ast2009-roteiro1" 
+    file="/ast2009-roteiro1/src/ast/interfaces/Factory.java" binary="false">    
+    <position x="677" y="150" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <generalization>    
+    <source project="ast2009-roteiro1" name="ast.interfaces.IntegerNumber" 
+      file="/ast2009-roteiro1/src/ast/interfaces/IntegerNumber.java" binary="false"/>    
+    <target project="ast2009-roteiro1" name="ast.interfaces.Expression" 
+      file="/ast2009-roteiro1/src/ast/interfaces/Expression.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="ast2009-roteiro1" name="ast.interfaces.UnaryOperation" 
+      file="/ast2009-roteiro1/src/ast/interfaces/UnaryOperation.java" binary="false"/>    
+    <target project="ast2009-roteiro1" name="ast.interfaces.Operation" 
+      file="/ast2009-roteiro1/src/ast/interfaces/Operation.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="ast2009-roteiro1" name="ast.interfaces.BinaryOperation" 
+      file="/ast2009-roteiro1/src/ast/interfaces/BinaryOperation.java" binary="false"/>    
+    <target project="ast2009-roteiro1" name="ast.interfaces.Operation" 
+      file="/ast2009-roteiro1/src/ast/interfaces/Operation.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="ast2009-roteiro1" name="ast.interfaces.Operation" 
+      file="/ast2009-roteiro1/src/ast/interfaces/Operation.java" binary="false"/>    
+    <target project="ast2009-roteiro1" name="ast.interfaces.Expression" 
+      file="/ast2009-roteiro1/src/ast/interfaces/Expression.java" binary="false"/>  
+  </generalization>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
